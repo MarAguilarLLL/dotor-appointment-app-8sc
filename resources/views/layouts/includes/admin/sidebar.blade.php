@@ -14,31 +14,14 @@
         'active'=> request()->routeIs('admin.dashboard')
         ],
         [
-        'header'=>'Administrar pagina',
+        'header'=>'Gestión',
         ],
         [
-        'name' => 'Products',
-        'icon' => 'fa-solid fa-box',
-        'submenu' => true,
-        'active' => false,
-        'items' => [
-            [
-                'name' => 'Todos los Productos',
-                'href' => '#',
-                'active' => false,
-            ],
-            [
-                'name' => 'Agregar Producto',
-                'href' => '#',
-                'active' => false,
-            ],
-            [
-                'name' => 'Categorías',
-                'href' => '#',
-                'active' => false,
-            ]
+        'name' => 'Roles y permisos',
+        'icon' => 'fa-solid fa-shield-halved',
+        'href'=> route('admin.roles.index'),
+        'active' => request()->routeIs('admin.roles.*'),
         ]
-        ],
     ];
 @endphp
 
