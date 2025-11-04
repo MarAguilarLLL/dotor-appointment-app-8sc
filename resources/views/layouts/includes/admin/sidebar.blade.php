@@ -8,12 +8,6 @@
         'active'=> request()->routeIs('admin.dashboard')
         ],
         [
-        'name'=>'Dashboard 2',
-        'icon'=>'fa-solid fa-gauge',
-        'href'=> route('admin.dashboard'),
-        'active'=> request()->routeIs('admin.dashboard')
-        ],
-        [
         'header'=>'Gestión',
         ],
         [

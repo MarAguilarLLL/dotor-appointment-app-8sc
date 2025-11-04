@@ -32,13 +32,23 @@
         @include('layouts.includes.admin.sidebar')
 
         <div class="p-4 sm:ml-64">
-        <!--añadir margen superior-->
-        <div class="mt-14 flex items-center justify-between w-full">
-            @include('layouts.includes.admin.breadcrumb')
+    <!--añadir margen superior-->
+    <div class="mt-14">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-4 mb-6">
+            <!-- Breadcrumb -->
+            <div class="flex-1">
+                @include('layouts.includes.admin.breadcrumb')
+            </div>
+            
+            <!-- Acciones (botón Nuevo) -->
+            <div class="flex items-center gap-4">
+                {{ $action ?? '' }}
+            </div>
         </div>
+    </div>
 
-                    {{$slot}}
-
+    {{ $slot }}
+</div>
 
         @stack('modals')
 
