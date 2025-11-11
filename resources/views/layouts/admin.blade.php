@@ -65,6 +65,33 @@
             Swal.fire(@json(session('swal')));
         </script>
     @endif
+    
+    <script>
+        //buscar todos los elementos de una clase específica
+        forms = document.querySelectorAll('.delete-form');
+        forms.forEach(form => {
+            //se pone al tiro de cualquier accion submit
+            form.addEventListener('submit', function(e){
+                //evita que se envie
+                e.preventDefault();
+                    Swal.fire({
+                    title: "¿Estás seguro?",
+                    text: "No podrás revertir estos cambios",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "¡Sí, eliminar!",
+                    cancelButtonText: "Cancelar"
+                    }).then((result) => {
+                        if(result.isConfirmed){
+                        //Borra el registro
+                        form.submit();
+                        }
+                    });
+            })
+        });
+    </script>
 
     </body>
 </html>
