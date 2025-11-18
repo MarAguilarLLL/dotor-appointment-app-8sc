@@ -12,5 +12,6 @@
         </x-wire-button>
     </x-slot>
 
-Usuarios
+    @livewire('admin.datatables.user-table')
+
 </x-admin-layout>
